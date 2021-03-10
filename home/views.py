@@ -10,7 +10,7 @@ from .models import RegisterForm
 def index(request):
     if request.user.is_anonymous:
         return redirect('/login') 
-    return render(request, 'index.html')
+    return render(request, 'home/index.html')
 
 def loginUser(request):
     if request.method=="POST":
@@ -28,19 +28,20 @@ def loginUser(request):
 
         else:
             # No backend authenticated the credentials
-            return render(request, 'login.html')
+            return render(request, 'home/login.html')
 
-    return render(request, 'login.html')
+    return render(request, 'home/login.html')
 
 def logoutUser(request):
     logout(request)
     return redirect("/login")
 
 def about(request):
-    return render(request, 'about.html') 
+    return render(request, 'home/about.html') 
 
-def services(request):
-    return render(request, 'services.html')
+
+def test(request):
+    return render(request, 'home/test.html')
  
 
 def contact(request):
@@ -52,7 +53,7 @@ def contact(request):
         contact = Contact(name=name, email=email, phone=phone, desc=desc, date = datetime.today())
         contact.save()
         messages.success(request, 'Your message has been sent!')
-    return render(request, 'contact.html')
+    return render(request, 'home/contact.html')
 def register(request):
     if request.method == 'POST':
         form= RegisterForm(request.POST)
@@ -66,5 +67,4 @@ def register(request):
 
         
     
-    return render(request, 'register.html', {"form":form})
-
+    return render(request, 'home/register.html', {"form":form})

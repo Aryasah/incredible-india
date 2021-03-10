@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    
+}
+.card-body { font-family: 'Lora', serif;}
+.d-block,.coll{
+    border-radius:0.2rem;
+    box-shadow:  rgb(8, 63, 247);
+}
