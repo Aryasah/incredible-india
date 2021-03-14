@@ -1,12 +1,10 @@
 {% extends 'home/base.html' %}
-
 {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}"/>
 
 {% block title %}Home{% endblock title %}
 {% block head %}
-
-  <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}"/>
-  
+    <link href="static/css/index.css" rel="stylesheet">
 {% endblock head %}
 
 {% block icon %} 
@@ -14,8 +12,8 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-user"  style="font-size:2rem" aria-hidden="true"></i></a></a>
           <div class="dropdown-menu text-center">
-              <a class="dropdown-item " href="/contact"><span style="font-family:'Cookie',cursive;font-size:1.6rem">WelCome</span> <span style="color:blue;font-size:1.2rem;font-family:'Lora',cursive"><i>{{request.user}}</i></i></span></a>
-              <a class="nav-brand " href='/logout'> <i class="fa fa-sign-out" style="color:red" aria-hidden="true"> Log-Out</i></a>
+              <a class="dropdown-item " href="/contact">WelCome</a>
+              <a class="nav-brand " href='/login'> <i class="fa fa-sign-out" aria-hidden="true"> Log-Out</i></a>
           </div>
       </li>
       </ul>
@@ -55,7 +53,7 @@
         <img src="{% static 'img/taj.jpg' %}" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
             <h5>The Taj Mahal</h5>
-            <p>One of seven wonders of world, a symbol of love and devotion </p>
+            <p>One of seven wonders pf world, a symbol of love and devotion </p>
         </div>
         </div>
     </div>
@@ -83,13 +81,9 @@
     <hr>
   </section>
     <section>
-  <div class="container mb-5">
+  <div class="container">
     <div class="card-deck mt-2 mb-2">
-
-      <div class="card" data-aos="fade-right"  data-aos-duration="9000" data-aos-easing="ease-in-out" data-aos-delay="100">
-
       <div class="card">
-
         <img class="card-img-top " src="{% static 'img/card/lotus.jpg' %}" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title" id="dots1">Lotus Temple, New Delhi</h5>
@@ -99,11 +93,7 @@
           <button class="btn btn-primary" onclick="myFunction1()" id="myBtn1">Know More</button>
         </div>
       </div>
-
-      <div class="card"  data-aos="fade-up"  data-aos-duration="9000" data-aos-easing="ease-in-out" data-aos-delay="100">
-
       <div class="card">
-
         <img class="card-img-top h-60" src="{% static 'img/card/toytrain.jpg' %}" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title" id="dots2">Darjeeling Toy-Train</h5>
@@ -113,7 +103,7 @@
           <button class="btn btn-primary h-60" onclick="myFunction2()" id="myBtn2">Know more</button>
         </div>
       </div>
-      <div class="card"  data-aos="fade-left" data-aos-duration="9000" data-aos-easing="ease-in-out" data-aos-delay="100">
+      <div class="card">
         <img class="card-img-top h-60" src="https://3.bp.blogspot.com/-IKk-wHY12Vk/V4YjZpgYP1I/AAAAAAAABcE/GpO2zJHSlvUJ0TpR4LbXqux1QhVa7BrPgCLcB/s1600/kerala-tourism-photos2.jpg" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title" id="dots3">Snake Boats, Kerala</h5>
@@ -125,11 +115,7 @@
       </div>
     </div>
     <div class="card-deck mt-2 mb-6">
-
-      <div class="card"  data-aos="fade-right"  data-aos-duration="9000" data-aos-easing="ease-in-out" data-aos-delay="100">
-
       <div class="card">
-
         <img class="card-img-top" src="{% static 'img/card/varanasi.jpg' %}" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title" id="dots4">Varanasi</h5>
@@ -139,11 +125,7 @@
           <button class="btn btn-primary" onclick="myFunction4()" id="myBtn4">Know more</button>
         </div>
       </div>
-
-      <div class="card"  data-aos="fade-up"  data-aos-duration="9000" data-aos-easing="ease-in-out" data-aos-delay="100">
-
       <div class="card">
-
         <img class="card-img-top" src="{% static 'img/card/charminar.jpg' %}" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title" id="dots5">CharMinar, Hyderabad</h5>
@@ -153,11 +135,7 @@
           <button class="btn btn-primary" onclick="myFunction5()" id="myBtn5">Know more</button>
         </div>
       </div>
-
-      <div class="card"  data-aos="fade-left" data-aos-duration="9000" data-aos-easing="ease-in-out" data-aos-delay="100">
-
       <div class="card">
-
         <img class="card-img-top" src="{% static 'img/card/dallake.jpg' %}" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title" id="dots6">Dal Lake, Srinagar</h5>
@@ -170,14 +148,5 @@
     </div>
   </div>
   </section>
-  <div class="container-fluid mb-0 px-0">
-<div class="card card-inverse">
-  <img class="card-img" src="https://source.unsplash.com/1200x400/?travel,roads,adventure" alt=" image">
-  <div class="card-img-overlay">
-    <h4 class="card-title"  style="font-family:'Lora', cursive;color:white">Adventure Travelling </h4>
-    <h6 class="card-title"  style="font-family:'Lora', cursive;color:white">Adventure Never Exhausts You</h6>
-    <p class="card-text" style="font-family:'Lora', cursive; color:white"><i class="fa fa-quote-left" style="font-size:1.6rem" aria-hidden="true"></i>  The gladdest moment in human life is a departure into unknown lands.<br> – Sir Richard Burton</p>
-  </div>
-</div>
-  </div>
+
 {% endblock body %}
