@@ -24,16 +24,20 @@ def loginUser(request):
         if user is not None:
             # A backend authenticated the credentials
             login(request, user)
+            messages.success(request,"Succesful Logged-In")
             return redirect("/")
 
         else:
             # No backend authenticated the credentials
+            messages.error(request,"Invalid Credentials ,Please Try Again")
             return render(request, 'home/login.html')
 
     return render(request, 'home/login.html')
 
 def logoutUser(request):
     logout(request)
+    messages.success(request,"Succesful Logout")
+
     return redirect("/login")
 
 def about(request):

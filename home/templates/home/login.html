@@ -1,10 +1,11 @@
 {% extends 'home/base.html' %}
+{% load static %}
 
 
 {% block title %}Log-In{% endblock title %}
 
 {% block head %}
-    <link href="static/css/login.css" rel="stylesheet">
+    <link type='text/css' href="{% static 'css/login.css' %}" rel="stylesheet">
 {% endblock head %}
 {% block home %}#{% endblock home %}
 {% block contact %}#{% endblock contact %}

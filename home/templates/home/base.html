@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -12,7 +13,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Langar&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
-    <link href="static/css/base.css" rel="stylesheet">
+    <link type='text/css' href="{% static 'css/base.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     {% block head %}{% endblock head %}
     <title> {% block title %}{% endblock title %} | Incredible Tours</title>
     <style>
@@ -34,13 +36,13 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="{% block home %}{% endblock home %}">Home
+          <a class="nav-link" href="{% block home %}{% endblock home %}"><span  style="font-family: 'Lora', cursive; font-size:1.2rem">Home</span>
                 <span class="sr-only">(current)</span>
               </a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Explore</a>
-          <div class="dropdown-menu">
+        <li class="nav-item dropdown" >
+          <a  class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><span style="font-family: 'Lora', cursive; font-size:1.2rem">Explore</span></a>
+          <div class="dropdown-menu" style="font-family: 'Lora', cursive;">
               <a class="dropdown-item" href="{% block contact %}{% endblock contact %}">Contact</a>
               <a class="dropdown-item" href="{% block about %}{% endblock about %}">About</a>
               <a class="dropdown-item" href="#">Explore</a>
@@ -64,7 +66,7 @@
 {% endif %}
 
 {% block body %} {% endblock body %}
-<footer class="footer-distributed">
+<footer class="footer-distributed mt-0 mb-0">
 
 			<div class="footer-left">
 
@@ -220,6 +222,10 @@ var preload = document.getElementById('loader');
 function myloading(){
   preload.style.display='none';
 }
+</script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
 </script>
   </body>
 </html>
