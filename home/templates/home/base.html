@@ -1,4 +1,4 @@
-
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Langar&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
-    <link href="static/css/base.css" rel="stylesheet">
+    <link type='text/css' href="{% static 'css/base.css' %}" rel="stylesheet">
     {% block head %}{% endblock head %}
     <title> {% block title %}{% endblock title %} | Incredible Tours</title>
     <style>
