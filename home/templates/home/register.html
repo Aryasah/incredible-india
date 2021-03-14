@@ -20,19 +20,53 @@
  {% endblock icon %}
 
 {% block body %}
+<section class="bg-light">
 <div class="text-center">
 <h1 style="font-family:'Langar',cursive;">Sign-Up</h1>
 </div>
 <section style="display:flex;justify-content:center;border:1px solid #fafafa">
-<form method="post" class="form-group">
-{% csrf_token %}
-{{form| crispy}}
-<div class="text-center">
-<button type="submit" class="btn btn-success" style="background-color:green; font-size:1.4rem">Register</button>
-</div>
+
+<form>
+  <div class="form-group">
+    <label for="username" class="form-label">Username</label>
+    <input required type="text" class="form-control" name="username" id="username" placeholder="Username">
+   </div>
+     <div class="form-group">
+    <label for="fname" class="form-label">First Name</label>
+    <input required type="text" class="form-control" name="fname" id="fname" placeholder="Firstname">
+   </div>
+     <div class="form-group">
+    <label for="lname" class="form-label">Last Name</label>
+    <input required type="text" class="form-control" name="lname" id="lname" placeholder="Lastname">
+   </div>
+   <div class="form-group">
+    <label for="email" class="form-label">Email address</label>
+    <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="mame@example.com">
+    <div id="emailHelp" class="form-text font-italic text-muted">We'll never share your email with anyone else.</div>
+  </div>
+  <div>
+  <div class="form-group">
+    <label for="pass1" class="form-label">Password</label>
+    <input type="password" name="pass1" class="form-control" id="pass1" placeholder="Password">
+  </div>
+    <div class="form-group">
+    <label for="pass2" class="form-label">Confirm Password</label>
+    <input type="password" name="pass2" class="form-control" id="pass2" placeholder="Password">
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
 </section>
 <div class="text-center">
         <p class="mt-5 mb-3 text-muted"><b>&copy;2021 <br><i> All Rights Reserved To Arya Sah</i</b>></p>
 </div>
+</section>
+
+
+
+
 {% endblock body %}
