@@ -1,10 +1,8 @@
 {% extends 'home/base.html' %}
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}"/>
-
 {% block title %}Home{% endblock title %}
 {% block head %}
-    <link href="static/css/index.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}"/>
 {% endblock head %}
 
 {% block icon %} 
@@ -12,8 +10,8 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-user"  style="font-size:2rem" aria-hidden="true"></i></a></a>
           <div class="dropdown-menu text-center">
-              <a class="dropdown-item " href="/contact">WelCome</a>
-              <a class="nav-brand " href='/login'> <i class="fa fa-sign-out" aria-hidden="true"> Log-Out</i></a>
+              <a class="dropdown-item " href="/contact"><span style="font-family:'Cookie',cursive;font-size:1.6rem">WelCome</span> <span style="color:blue;font-size:1.2rem;font-family:'Lora',cursive"><i>{{request.user}}</i></i></span></a>
+              <a class="nav-brand " href='/logout'> <i class="fa fa-sign-out" style="color:red" aria-hidden="true"> Log-Out</i></a>
           </div>
       </li>
       </ul>
@@ -53,7 +51,7 @@
         <img src="{% static 'img/taj.jpg' %}" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
             <h5>The Taj Mahal</h5>
-            <p>One of seven wonders pf world, a symbol of love and devotion </p>
+            <p>One of seven wonders of world, a symbol of love and devotion </p>
         </div>
         </div>
     </div>
@@ -71,7 +69,7 @@
  <section>
     <div class="jumbotron jumbotron-fluid text-center mt-1 mb-3">
       <div class="container">
-        <h1 class="display-4" style="font-family: 'Langar', cursive;">India Land of Happiness</h1>
+        <h1 class="display-4" style="font-family: 'Langar', cursive; font-size:3rem ">India Land of Happiness</h1>
         <h3 style="text-align: center;">Experience</h3>
         <h1 style="text-align: center;">The Magnificient India</h1>
         <p style=" font-family: 'Lora', serif;"><span style=" font-family: 'Cookie', serif; font-size:2rem"><b>India </b></span> is the One land that all men desire to see, and having seen once, by even a glimpse, would not give that glimpse for all the shows of all the rest of the globe combined.<br>~Mark Twain
@@ -80,7 +78,7 @@
     </div>
     <hr>
   </section>
-    <section>
+       <section>
   <div class="container">
     <div class="card-deck mt-2 mb-2">
       <div class="card">
@@ -147,6 +145,16 @@
       </div>
     </div>
   </div>
+  </section><section>
+  <div class="container-fluid mt-5 mb-0 px-0">
+<div class="card card-inverse">
+  <img class="card-img" src="https://source.unsplash.com/1200x400/?travel,roads,adventure" alt=" image">
+  <div class="card-img-overlay">
+    <h4 class="card-title"  style="font-family:'Lora', cursive;color:white">Adventure Travelling </h4>
+    <h6 class="card-title"  style="font-family:'Lora', cursive;color:white">Adventure Never Exhausts You</h6>
+    <p class="card-text" style="font-family:'Lora', cursive; color:white"><i class="fa fa-quote-left" style="font-size:1.6rem" aria-hidden="true"></i>  The gladdest moment in human life is a departure into unknown lands.<br> – Sir Richard Burton</p>
+  </div>
+</div>
+  </div>
   </section>
-
 {% endblock body %}
