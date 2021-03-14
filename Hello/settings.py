@@ -28,7 +28,7 @@ SECRET_KEY = 'e+e#vq+j1^$m+ipl$m6n$&fk!k!ewtkoqe$4--!#tfvx&j5w#&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -131,6 +131,15 @@ STATICFILES_DIRS = [
 ]
 
 CRISPY_TEMPLATES_PACK="bootstrap4"
+
+LOGGING = { 
+    "version":1 ,
+    "disable_existing_loggers": False,
+    "handlers":{"console":{"class": "logging.StreamHandler"}},
+    "loggers":{
+        "":{"handlers": ["console"],"level":"INFO"},
+    },
+}
 
 #Activate Django-Heroku.
 django_heroku.settings(locals())
