@@ -1,10 +1,21 @@
-from django.shortcuts import render, redirect
 from datetime import datetime
 from home.models import Contact
 from django.contrib import messages
+from django.contrib.auth import logout, authenticate, login ,get_user_model
+from django.http import HttpResponse
+from django.shortcuts import render, redirect
+from .forms import SignupForm
+from django.contrib.sites.shortcuts import get_current_site
+from django.utils.encoding import force_bytes, force_text
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.template.loader import render_to_string
 from django.contrib.auth.models import User
-from django.contrib.auth import logout, authenticate, login
-from .models import RegisterForm
+from django.core.mail import send_mail
+from django.conf import settings
+
+
+
+
 
 # Create your views here.
 def index(request):
@@ -58,17 +69,31 @@ def contact(request):
         contact.save()
         messages.success(request, 'Your message has been sent!')
     return render(request, 'home/contact.html')
-def register(request):
+def signup(request):
     if request.method == 'POST':
-        form= RegisterForm(request.POST)
+        form = SignupForm(request.POST)
         if form.is_valid():
-            form.save()
-            messages.success(request, 'You Have been registered')
-        return redirect("/login")
+            user = form.save(commit=False)
+            user.is_active = False
+            
+            current_site = get_current_site(request)
+            mail_subject = 'Welcome To Incredible India'
+            message = render_to_string('home/acc_active_email.html')
+            print(message)
+            to_email = form.cleaned_data.get('email')
+            send_mail(
+                        mail_subject,
+                        message,
+                        settings.EMAIL_HOST_USER ,
+                        [to_email],                      
+            )
+            print(to_email)
+            messages.success(request, 'Your message has been sent!')
+            
+            
+            user.save()
+            return render(request,'home/acc_active_sent.html')
     else:
-        form=RegisterForm()
-        messages.warning(request, 'Fill all the field')
+        form = SignupForm()
+    return render(request, 'home/signup.html', {'form': form})
 
-        
-    
-    return render(request, 'home/register.html', {"form":form})
