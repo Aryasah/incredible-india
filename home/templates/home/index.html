@@ -10,8 +10,8 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-user"  style="font-size:2rem" aria-hidden="true"></i></a></a>
           <div class="dropdown-menu text-center">
-              <a class="dropdown-item " href="/contact"><span style="font-family:'Cookie',cursive;font-size:1.6rem">WelCome</span> <span style="color:blue;font-size:1.2rem;font-family:'Lora',cursive"><i>{{request.user}}</i></i></span></a>
-              <a class="nav-brand " href='/logout'> <i class="fa fa-sign-out" style="color:red" aria-hidden="true"> Log-Out</i></a>
+              <a class="dropdown-item " href="/contact"><span style="font-family:'Cookie',cursive;font-size:1.6rem">WelCome{{user}}</span> <span style="color:blue;font-size:1.2rem;font-family:'Lora',cursive"><i>{{request.user}}</i></i></span></a>
+              <a class="nav-brand " href='/logout'> <i class="fa fa-sign-out fa-2x" style="color:red" aria-hidden="true"> Log-Out</i></a>
           </div>
       </li>
       </ul>
@@ -157,4 +157,7 @@
 </div>
   </div>
   </section>
+
+
+
 {% endblock body %}
